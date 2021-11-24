@@ -1,0 +1,110 @@
+.cartArea{
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    background: #111;
+    z-index: 999999999999;
+    border-left: 5px solid #E7272D;
+    top: 0;
+    right: -300vh;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.cartHeader{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartHeader h1{
+    font-size: 40px;
+}
+
+.cartHeader span{
+    font-size: 20px;
+    font-weight: bold;
+    background: #580003;
+    padding: 15px 30px;
+    transition: .3s;
+}
+
+.cartHeader span:hover{
+    background: #E7272D;
+    cursor: pointer;
+}
+
+.cartItens{
+    margin-top: 50px;
+}
+
+.itemMini{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartItem{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.itemPrice{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.itemPrice span{
+    color: white;
+    padding: 8px 20px;
+    margin-left: 5px;
+    background: #580003;
+    transition: .3s;
+}
+
+.itemPrice span:hover{
+    background: red;
+}
+
+.cartFinish{
+    width: 100%;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+    margin-top: 20px;
+}
+
+.cartFinish{
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.finishContent{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    padding: 20px 0px 20px 0px;
+}
+
+.finishCart{
+    color: white;
+    font-weight: bold;
+    font-family: 'Kalam';
+    font-size: 28px;
+    background: green;
+    padding: 15px 120px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.finishCart:hover{
+    background: rgb(46, 192, 36);
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Lanches</title>
+    <link rel="icon" href="./images/pandalogo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Kalam:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body onload="setUser()">
+    <div class="exitModal">
+        <div class="container">
+            <h1>Deseja Mesmo Sair ?</h1>
+            <div class="buttons">
+                <div class="sim" onclick="returnToLogin()">Sim</div>
+                <div class="nao" onclick="hideModal()">Não</div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/pandalogo.png" width="80px" />
+                <span>Panda Lanches</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#banner">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#testmonials">Clientes</a></li>
+                    <li><a id="now" href="./cardapio.html">Cardapio</a></li>
+                </ul>
+            </nav>
+
+            <div class="rightMenu">
+                <img class="user" src="./images/user-solid.svg" onclick="showUserDetails()">
+                <div class="userDetails">
+                    <h1>Logado como:<br></h1>
+                    <ul>
+                        <li><a href="./pedidos.html">Meus Pedidos</a></li>
+                        <li><a href="#" onclick="openExitModal()">Sair da Conta</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    
+    <section id="banner" class="banner">
+        <div class="container">
+            <div class="text">
+                <small style="font-family: Kalam; font-size: 30px; font-weight: bold;  color: #E7272D;">Bem Vindo ao</small>
+                <h1>MELHOR FAST <br> FOOD DA REGIÃO</h1>
+                <a href="#" onclick="secret()">CHEGA MAIS !</a>
+            </div>
+            <div class="image">
+                <img src="./images/home-img.png" alt="">
+            </div>
+        </div>
+        <img class="bottomBanner" src="./images/wave.png">
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="title">Sobre Nós</h2>
+            <p class="subtitle">
+                Somos os melhores, pode confiar.
+            </p>
+
+            <div class="gridCards">
+                <div class="card">
+                    <h3>Praticidade</h3>
+                    <div class="hideText">
+                        <p>
+                            Temos um modo de preparo agil e eficiente
+                        </p>
+                        <p>
+                            Sempre pensamos no melhor pra você.
+                        </p>
+                        <i class="fa fa-plus" style="font-size: 100px; margin-top: 50px;"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Qualidade</h3>
+                    <div class="hideText">
+                        <p>
+                            Temos qualidade impecavel e a melhor que você ja viu.
+                        </p>
+                        <p>
+                            Eleitos por 5 vezes o melhor <br> Fast Food pela revista Burguer Knight.
+                        </p>
+                        <i class="fa fa-thumbs-up" style="font-size: 100px; margin-top: 50px;"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Rapidez</h3>
+                    <div class="hideText">
+                        <p>
+                            Temos a equipe mais rapida <br> do mundo
+                        </p>
+                        <p>
+                            Estaremos sempre prontos para <br> entregar seu lanche glorioso.
+                        </p>
+                        <i class="fa fa-angle-double-right" style="font-size: 100px; margin-top: 50px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="model">
+            <div class="foodCard" onclick="window.location.href = './cardapio.html'">
+                <div class="foodImage">
+                    <img src="" style="width: 350px; height:300px;">
+                </div>
+                <div class="foodName"></div>
+                <div class="foodPrice"></div>
+                <div class="foodDesc"></div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="title">Mais Pedidos</h2>
+            <p class="subtitle">
+                Os mais populares do momento !
+            </p>
+            <div class="foodOptions">
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="title">Nossa Equipe</h2>
+            <p class="subtitle">
+                Temos a melhor equipe pra garantir a rapidez e eficiencia no preparo e na entrega do seu lanche.
+            </p>
+            <div class="teamCards">
+                <div class="teamCard">
+                    <img src="./images/marcao.jpeg">
+                    <h2>Marcão</h2>
+                    <h3>Dono</h3>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+
+                <div class="teamCard">
+                    <img src="./images/miranadinal.jpeg">
+                    <h2>Lucas Miranda</h2>
+                    <h3>Motoboy</h3>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+
+                <div class="teamCard">
+                    <img src="./images/jamaica.jpeg">
+                    <h2>Jamaica</h2>
+                    <h3>Cobrador</h3>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+
+                <div class="teamCard">
+                    <img src="./images/marlon.jpeg">
+                    <h2>Marlon</h2>
+                    <h3>Chapeiro</h3>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+
+                <div class="teamCard">
+                    <img src="./images/machado.jpeg">
+                    <h2>Lucas Machado</h2>
+                    <h3>Chapeiro</h3>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+
+                <div class="teamCard">
+                    <img src="./images/tadandoonda.jpg">
+                    <h2>Lucas Gomes</h2>
+                    <h3>Motoboy</h3>
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testmonials" class="testmonials">
+        <div class="container">
+            <h1 class="title">Clientes que Aprovaram :)</h1>
+            <p class="subtitle">
+                Veja alguns relatos de clientes que sairam satisfeitos com nosso serviço.
+            </p>
+        </div>
+
+        <div class="carousel">
+            <button class="prev carouselControler">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            
+            <div class="carouselArea">
+                <div class="carouselItem">
+                    <h1>Junior Almeida</h1>
+                    <img src="./images/test1.jpeg">
+                    <div style="margin: 15px 0px 15px 0px;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <p class="subtitle">Achei o lanche bom mas a entrega poderia ser melhor.</p>
+                </div>
+
+                <div class="carouselItem">
+                    <h1>João Freitas</h1>
+                    <img src="./images/test2.jpg">
+                    <div style="margin: 15px 0px 15px 0px;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="subtitle">Achei muito bom e satisfatorio.</p>
+                </div>
+
+                <div class="carouselItem">
+                    <h1>Marcio Texeira</h1>
+                    <img src="./images/test3.jpg">
+                    <div style="margin: 15px 0px 15px 0px;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="subtitle">Muito bom, divulguei pra geral</p>
+                </div>
+            </div>
+
+            <button class="next carouselControler">
+                <i class="fa fa-angle-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <footer>Trabalho de Fim de Curso 3CTI</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>
