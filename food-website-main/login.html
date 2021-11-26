@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Panda Lanches</title>
+      <link rel="stylesheet" href="./css/login.css">
+      <link rel="icon" href="./images/pandalogo.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="modalArea">
+         <div class="modal">
+            <h1>Usuario Não Encontrado</h1>
+         </div>
+      </div>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               <img src="./images/pandalogo.png" width="100px" height="100px">
+               <h1 style="font-size: 30px;">Panda Lanches</h1>
+            </div>
+            <div class="title signup">
+                <img src="./images/pandalogo.png" width="100px" height="100px">
+                <h1 style="font-size: 30px;">Panda Lanches</h1>
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login loginInput">Logar-se</label>
+               <label for="signup" class="slide signup">Cadastrar-se</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field">
+                     <input type="text" class="emailInput" placeholder="Informe seu Nome De Usuario" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" class="passInput" placeholder="Informe sua Senha" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <a class="loginBtn" onclick="loginUser()">Logar-se</a>
+                  </div>    
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Informe seu Nome de Usuario" class="cadEmail" required>
+                  </div>
+                  <div class="field">
+                     <input type="text" placeholder="Informe seu Email" class="cadUserName" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Sua senha aqui" class="cadPass" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <a class="cadButton" onclick="getUserLocation()">Localização</a>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <a class="cadButton" onclick="registerUser()">Cadastrar-se</a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script src="./js/login.js"></script>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>

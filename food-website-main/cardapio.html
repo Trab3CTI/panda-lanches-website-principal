@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Panda Lanches</title>
+    <link rel="icon" href="./images/pandalogo.png">
+    <link rel="stylesheet" href="./css/cardapio.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Kalam:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="principal">
+        <a class="backButton" href="./index.html">
+            <i class="fa fa-arrow-left"></i>
+            <h2 class="back">Voltar</h2>
+        </a>
+
+        <h1 class="title">Nosso Cardapio</h1>
+
+        <div>
+            <i class="fa fa-shopping-cart" onclick="openCart()"></i>
+        </div>
+    </div>
+
+    <div class="payModal" style="display: none;">
+        <div class="payModalContainer">
+            <div class="payModalHeader">
+                <h1 class="x" onclick="closePayMethods()">X</h1>
+                <div></div>
+                <h1>Escolha a Forma de Pagamento</h1>
+                <div></div>
+            </div>
+            <div class="payMethods">
+                <img class="pix" src="./images/pix.svg" onclick="pixChoice()">
+                <img class="card" src="./images/mastercard-seeklogo.com.svg" onclick="cardChoice()">
+            </div>
+            <div class="payArea">
+                <img style="display: none;" class="pixQrCode" src="./images/placeholder.png" width="200px" height="200px">
+                <h2 style="display: none;" class="cardAlert">Não Esqueça de Checar o Preço</h2>
+            </div>
+            <button class="finishPay" onclick="openConfirmModal()" onclick="changePrice()" onclick="restartCart()">Finalizar Pagamento</button>
+        </div>
+    </div>
+
+    <div class="confirmPayModal">
+        <div class="confirmPayModalContainer">
+            <div id="loading-bar-spinner" class="spinner"><div class="spinner-icon"></div></div>
+            <div class="mensagem">
+                <h1>Aprovando Pagameto</h1>
+            </div>
+        </div>
+    </div>
+
+    <nav class="filter">
+        <select id="food">
+            <option value="Todos">Todos</option>
+            <option value="Hamburgers">Hamburgers</option>
+            <option value="Batatas">Batatas</option>
+            <option value="Bebidas">Bebidas</option>
+        </select>
+        <input id="filtrar" type="submit" value="Filtrar" onclick="filterMenu()">
+    </nav>    
+
+    <div class="models">
+        <div class="food-item">
+            <a href="">
+                <div class="food-item--img"><img src="" /></div>
+                <div class="food-item--add">+</div>
+            </a>
+            <div class="food-item--price">R$ --</div>
+            <div class="food-item--name">--</div>
+            <div class="food-item--desc">--</div>
+        </div>
+        <div class="cart--item">
+            <img src="" />
+            <div class="cart--item-nome">--</div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item--qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+    </div>
+    <header style="display: none;">
+        <div class="menu-openner"><span>0</span>🛒</div>
+    </header>
+    <main>
+        <div class="food-area"></div>
+    </main>
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <div class="cart-header" style="display: flex; align-items: center; justify-content: space-between;">
+                <h1 style="color: white; font-size: 30px;">SUAS COMPRAS</h1>
+                <h1 style="color: white; background: red; cursor: pointer; padding: 10px 20px;" onclick="closeCart()">X</h1>
+            </div>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem desconto">
+                    <span>Desconto (-10%)</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem total big" style="font-size: 30px; border-top: 1px solid ;">
+                    <span style="color: white;">Total</span>
+                    <span style="color: white;" class="recordedTotal">R$ --</span>
+                </div>
+                <div class="cart--finalizar" onclick="openPayModal()">Finalizar a compra</div>
+            </div>
+        </div>
+    </aside>
+    <div class="foodWindowArea">
+        <div class="foodWindowBody">
+            <div class="foodInfo--cancelMobileButton">Voltar</div>
+            <div class="foodBig">
+                <img src="" />
+            </div>
+            <div class="foodInfo">
+                <h1>--</h1>
+                <div class="foodInfo--desc">--</div>
+                <div class="foodInfo--sizearea">
+                    <div class="foodInfo--sector">Tamanho</div>
+                    <div class="foodInfo--sizes">
+                        <div data-key="0" class="foodInfo--size">PEQUENA <span>--</span></div>
+                        <div data-key="1" class="foodInfo--size">MÉDIO <span>--</span></div>
+                        <div data-key="2" class="foodInfo--size selected">GRANDE <span>--</span></div>
+                    </div>
+                </div>
+                <div class="foodInfo--pricearea">
+                    <div class="foodInfo--sector">Preço</div>
+                    <div class="foodInfo--price">
+                        <div class="foodInfo--actualPrice">R$ --</div>
+                        <div class="foodInfo--qtarea">
+                            <button class="foodInfo--qtmenos">-</button>
+                            <div class="foodInfo--qt" style="font-size: 20px;">1</div>
+                            <button class="foodInfo--qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="foodInfo--addButton">Adicionar ao carrinho</div>
+                <div class="foodInfo--cancelButton" style="color: white; font-size: 18px;">Cancelar</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/food.js"></script>
+    <script type="text/javascript" src="./js/cardapio.js"></script>
+
+</body>
+</html>

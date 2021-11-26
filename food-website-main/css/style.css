@@ -1,0 +1,572 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins';
+    user-select: none;
+}
+
+.title{
+    font-family: 'Kalam';
+    color: #E7272D;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitle{
+    color: gray;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    height: 100px;
+    z-index: 9999999;
+    transition: 0.3s;
+}
+
+.dark{
+    background: #111;
+    border-bottom: 5px solid #E7272D;
+}
+
+.blur{
+    opacity: 0.5;
+}
+
+section{
+    margin-bottom: 150px;
+}
+
+header .container{
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .logo{
+    display: flex;
+    align-items: center;
+}
+
+.container .logo span{
+    font-size: 40px;
+    font-family: 'Kalam';
+    font-weight: bold;
+    color: red;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    margin-right: 200px;
+}
+
+nav ul li a{
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'DM Sans';
+    color: white;
+    padding: 8px;
+    border-radius: 1px;
+    transition: .3s;
+}
+
+nav ul li a:hover{
+    background: #E7272D;
+}
+
+#now{
+    border: 5px solid transparent;
+    background: #E7272D;
+    animation: rotate 1s infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate{
+    0%{background: #E7272D;}
+    50%{background: #580003;}
+    100%{background: #E7272D;} 
+}
+
+#now:hover{
+    animation-name: none;
+}
+
+.rightMenu{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.user{
+    width: 30px;
+    filter: brightness(0) invert(1);
+    border-radius: 2px solid white;
+    margin-right: 50px;
+    transition: .2s;
+}
+
+.user:hover{
+    cursor: pointer;
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);-webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+}
+
+.userDetails{
+    width: 200px;
+    background: #580003;
+    margin-top: 40px;
+    text-align: center;
+    position: absolute;
+    margin-right: 55px;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.reveal{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.userDetails ul li{
+    width: 100%;
+    padding: 30px 0px 30px 0px;
+}
+
+.userDetails ul li a{
+    width: 100%;
+    color: white;
+    font-family: 'Kalam';
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.userDetails ul li a:hover{
+    color: #580003;
+    background: white;
+}
+
+
+.userDetails h1{
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.exitModal{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(17, 17, 17, 0.534);
+    z-index: 9999999999;
+    text-align: center;
+    display: none;
+}
+
+.exitModal .container{
+    padding: 100px;
+    background: #580003;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.sim{
+    background: darkgreen;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.sim:hover{
+    background: rgb(0, 189, 0);
+    cursor: pointer;
+}
+
+.nao{
+    padding: 25px;
+    background: darkred;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.nao:hover{
+    background: rgb(223, 0, 0);
+    cursor: pointer;
+}
+
+#banner{
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding-top: 100px;
+    background: #e49630;
+    display: flex;
+    justify-content: center;
+}
+
+#banner .container{
+    width: 85%;
+    height: 100px;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#banner .text h1{
+    color: #793800;
+    line-height: 120px;
+    font-weight: bold;
+    font-size: 90px;
+}
+
+.text a{
+    display: inline-block;
+    color: white;
+    background: #E7272D;
+    padding: 15px 30px;
+    font-family: 'DM Sans';
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text a:hover{
+    background: #850206;
+}
+
+.now{
+    background: #E7272D;
+    
+}
+
+.now:hover{
+    background: #850206;
+}
+
+#banner .image img{
+    width: 700px;
+    height: auto;
+    animation-name: hamburguer;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transform: rotate(20deg);
+}
+
+@keyframes hamburguer {
+    0%  {margin-top:0px;}
+    50% {margin-top:-100px;}
+    100% {margin-top:0px;}
+}
+
+
+.bottomBanner{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+}
+
+#about{
+    padding-top: 150px;
+    height: 40vh;
+}
+
+#about .container{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.gridCards{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.card{
+    width: 350px;
+    height: 250px;
+    border-bottom: 5px solid #E7272D;
+    box-shadow: 0px 0px 5px 1px #111;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #E7272D;
+    transition: .3s;
+}
+
+.card h3{
+    font-family: 'Kalam';
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.card:hover{
+    color: white;
+    background: #E7272D;
+    border-bottom: 5px solid #580003;
+    height: 500px;
+}
+
+.hideText{
+    display: none;
+}
+
+.hideText p{
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.card:hover .hideText{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#menu{
+    padding-top: 200px;
+}
+
+#menu .container{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.model{
+    display: none;
+}
+
+.foodOptions{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.foodCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 5px;
+    height: 530px;
+    border: 3px solid rgba(250, 89, 89, 0.527);
+    transition: .2s;
+}
+
+.foodCard:hover{
+    border: 3px solid #580003;
+    cursor: pointer;
+}
+
+.addFoodButton:hover{
+    background: #580003;
+}
+
+.foodImage{
+    margin-top: 40px;
+}
+
+.foodName{
+    font-size: 28px;
+    letter-spacing: 5px;
+    font-family: 'Kalam';
+    font-weight: bold;
+    color: #E7272D;
+}
+
+.foodPrice{
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+}
+
+.foodDesc{
+    color: rgb(61, 61, 61);
+    font-weight: 18px;
+}
+
+.addFoodButton{
+    color: white;
+    background: #E7272D;
+    padding: 10px 22px;
+    font-size: 30px;
+    border-radius: 100px;
+    margin-top: 60px;
+}
+
+
+#team{
+    text-align: center;
+    padding-top: 150px;
+}
+
+#team .container{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.teamCards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.teamCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid gray;
+    width: 300px;
+    height: 200px;
+}
+
+.teamCard img{
+    width: 120px;
+    height: 120px;
+    border-radius: 300px;
+}
+
+.checked{
+    color: orange;
+}
+
+#testmonials{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#testmonials .container{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.carousel{
+    width: 35%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.carouselItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carouselControler{
+	font-size: 35px;
+    padding: 20px 15px;
+	transition: .3s;
+	outline: none;
+	border: none;
+}
+
+.carouselControler:hover{
+    background: #E7272D;
+	color: white;
+	cursor: pointer;
+}
+
+
+.carouselItem img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+@media(max-width: 1366px){
+    header .logo{
+        margin-top: 20px;
+    }
+
+    header .logo{
+        display: flex;
+    }
+
+    #banner .container h1{
+        font-size: 55px;
+        line-height: 70px;
+    }
+
+    #banner .container a{
+        font-size: 16px;
+    }
+
+    #banner .container img{
+        width: 550px;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+    }
+
+    #menu .container{
+        width: 100%;
+    }
+
+
+
+}
+
+
+footer{
+    background: #111;
+    color: white;
+    font-weight: bold;
+    font-family: 'DM Sans';
+    font-size: 30px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+
+
+

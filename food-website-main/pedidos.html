@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Lanches</title>
+    <link rel="stylesheet" href="./css/pedidos.css">
+    <link rel="icon" href="./images/pandalogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Kalam:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body onload="loadPrice()">
+    <div class="principal">
+        <div class="container">
+            <a class="backButton" href="./index.html">
+                <i class="fa fa-arrow-left"></i>
+                <h2 class="back">Voltar</h2>
+            </a>
+    
+            <h1 class="title">Seus Pedidos</h1>
+        </div>
+    </div>
+
+    <div class="requests">
+        <div class="cancelModal">
+            <div class="cancelModalContainer">
+                <h1>Deseja Cancelar o Pedido #1 ?</h1>
+                <div class="buttons">
+                    <div class="sim" onclick="removeRequest()">Sim</div>
+                    <div class="nao" onclick="closeCancelModal()">Não</div>
+                </div>
+            </div>
+        </div>
+        <div class="request">
+            <div class="requestHeader">
+                <div class="cancelRequest" onclick="openModal()">X</div>
+                <h1>Pedido #1</h1>
+                <div></div>
+            </div>
+            <div class="requestTime">
+                <h2>Feito: Hoje</h2>
+            </div>
+            <div class="requestPrice">
+                <h1>Preço</h1>
+                <h1 class="recivedPrice">R$ 00.00</h1>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/food.js"></script>
+    <script type="text/javascript" src="./js/pedidos.js"></script>
+    <script type="text/javascript" src="./js/cardapio.js"></script>
+</body>
+</html>
